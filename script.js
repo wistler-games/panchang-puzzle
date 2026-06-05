@@ -521,9 +521,10 @@ function updatePcbcolor() {
 
 function dateChanged(date){
 	let newDate = new Date(date);
-  let validDate = newDate.toISOString().split('T')[0];
+    let validDate = newDate.toISOString().split('T')[0];
 	// updSquaresPos(newDate);
-  fetchPanchang(validDate, updSquaresPos);
+	computePanchangLocally();
+    updSquaresPos();
 }
 
 function updSquaresPos(){
@@ -733,7 +734,8 @@ function onSvgLoad() {
 	}
 	// Place the grey squares in puzzle corresponding to selected date
 	dateInput.value = validDate;
-  fetchPanchang(validDate, updSquaresPos);
+	computePanchangLocally();
+    updSquaresPos();
 	// updSquaresPos(validDate);
 	// read pieces colors from URL
 	var newColor;
