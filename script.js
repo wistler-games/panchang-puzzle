@@ -524,6 +524,7 @@ function dateChanged(date){
     let validDate = newDate.toISOString().split('T')[0];
 	// updSquaresPos(newDate);
 	computePanchangLocally();
+	hideLoadingPopup(); // Always hide popup after fetch
     updSquaresPos();
 }
 
@@ -735,6 +736,7 @@ function onSvgLoad() {
 	// Place the grey squares in puzzle corresponding to selected date
 	dateInput.value = validDate;
 	computePanchangLocally();
+	hideLoadingPopup(); // Always hide popup after fetch
     updSquaresPos();
 	// updSquaresPos(validDate);
 	// read pieces colors from URL
