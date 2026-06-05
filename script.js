@@ -85,9 +85,9 @@ async function fetchPanchang(dateInput, callback) {
 }
 
 // fetchPanchang(onSvgLoad);
-import * as Astronomy from "https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/+esm";
 
 function computePanchangLocally() {
+  import * as Astronomy from "https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/+esm";
   const now = new Date();
 
   // --- Sun's tropical ecliptic longitude (0–360°) ---
