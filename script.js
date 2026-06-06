@@ -87,7 +87,7 @@ async function fetchPanchang(dateInput, callback) {
 // fetchPanchang(onSvgLoad);
 
 function computePanchangLocally() {
-  // import * as Astronomy from "https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/+esm";
+  panchang_data = {};
   const now = new Date();
 
   // --- Sun's tropical ecliptic longitude (0–360°) ---
@@ -115,7 +115,7 @@ function computePanchangLocally() {
  //
   panchang_data.nakshatra_num = nakshatra;
   panchang_data.maasa_num = solarMonth;
-  panchang_data.rashi_num = lunarZodiac;
+  panchang_data.raashi_num = lunarZodiac;
 
   panchang_data.nakshatra = nakshatras[nakshatra];
   panchang_data.maasa = maasas[solarMonth];
