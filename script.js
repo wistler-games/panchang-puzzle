@@ -87,7 +87,7 @@ async function fetchPanchang(dateInput, callback) {
 // fetchPanchang(onSvgLoad);
 
 function computePanchangLocally() {
-  import * as Astronomy from "https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/+esm";
+  // import * as Astronomy from "https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/+esm";
   const now = new Date();
 
   // --- Sun's tropical ecliptic longitude (0–360°) ---
@@ -125,6 +125,10 @@ function computePanchangLocally() {
   panchang_data.मासा = maasas_dn[solarMonth];
   panchang_data.राशि = rashis_dn[lunarZodiac];
 	
+  document.getElementById('nakshatra').innerHTML = `नक्षत्रम् = ${panchang_data.नक्षत्र} &nbsp;&nbsp;&nbsp;&nbsp; Asterism: ${panchang_data.nakshatra}`;
+  document.getElementById('raashi').innerHTML = `चंद्र राशि: = ${panchang_data.राशि} &nbsp;&nbsp;&nbsp;&nbsp; Lunar Zodiac: ${panchang_data.rashi}`;
+  document.getElementById('maasa').innerHTML = `सूर्य मास: = ${panchang_data.मासा} &nbsp;&nbsp;&nbsp;&nbsp; Solar month: ${panchang_data.maasa}`;
+  
   return { solarMonth, nakshatra, lunarZodiac };
 }
 
