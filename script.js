@@ -1081,8 +1081,12 @@ function checkIfPuzzleSolved() {
 		}
 	}
 	if ( nbPlacedPcs == nbPcs ) {
-		isHttpReqForEnd = true;
-		checkSol();
+		// isHttpReqForEnd = true;
+		// checkSol();
+        pauseClock();
+        var prettyDate = new Date(document.getElementById("dateToSolve").value).toDateString();
+        var side = document.getElementById("usedSide").value;
+        updateSolutionMessage(labelSolFound + " for " + prettyDate + " using " + side + " sides", false);
 	}
 }
 
